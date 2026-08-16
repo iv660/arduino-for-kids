@@ -52,22 +52,7 @@ digitalDisplay.showNumber(currentDigit);
 
 ### Как реализовать
 
-#### Шаг 1: Напиши метод `DigitalDisplay.showNumber()`
-
-Метод получает одну цифру. Умножь её на константу `repeatedDigitMultiplier`: тогда `3` превратится в `3333`, а `7` — в `7777`. Затем передай получившееся число библиотеке методом `showNumberDec()`.
-
-Второй параметр `true` просит библиотеку показывать нули слева. Поэтому цифра 0 будет показана как `0000`, а не как пустой экран.
-
-```cpp
-void showNumber(int number) {
-    int repeatedNumber = number * repeatedDigitMultiplier;
-    display.showNumberDec(repeatedNumber, true);
-}
-```
-
-Замени комментарий `TODO` в методе `showNumber()` этим кодом.
-
-#### Шаг 2: Напиши главный алгоритм в `loop()`
+#### Шаг 1: Напиши главный алгоритм в `loop()`
 
 Замени комментарии `TODO` внутри `loop()` этим кодом:
 
@@ -85,6 +70,21 @@ void loop() {
 ```
 
 Сначала показываем цифру. Потом ждём секунду. Затем увеличиваем цифру. Отдельная простая проверка возвращает счёт к 0 после 9.
+
+#### Шаг 2: Напиши метод `DigitalDisplay.showNumber()`
+
+Метод получает одну цифру. Умножь её на константу `repeatedDigitMultiplier`: тогда `3` превратится в `3333`, а `7` — в `7777`. Затем передай получившееся число библиотеке методом `showNumberDec()`.
+
+Второй параметр `true` просит библиотеку показывать нули слева. Поэтому цифра 0 будет показана как `0000`, а не как пустой экран.
+
+```cpp
+void showNumber(int number) {
+    int repeatedNumber = number * repeatedDigitMultiplier;
+    display.showNumberDec(repeatedNumber, true);
+}
+```
+
+Замени комментарий `TODO` в методе `showNumber()` этим кодом.
 
 ## Запуск программы
 

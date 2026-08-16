@@ -1,0 +1,16 @@
+.pio
+.vscode
+.idea
+*.o
+build/
+.DS_Store
+*.pyc
+__pycache__/
+.env
+.env.local
+*.swp
+*.swo
+*~
+.project
+.cproject
+.settings/

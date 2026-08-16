@@ -29,7 +29,7 @@
 
 ```ini
 lib_deps =
-    avishorp/TM1637Display
+    smougenot/TM1637
 ```
 
 PlatformIO скачает библиотеку при первой сборке проекта.

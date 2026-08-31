@@ -5,13 +5,13 @@ const int displayClockPin = 8;                   // Пин CLK дисплея
 const int displayDataPin = 9;                    // Пин DIO дисплея
 const int firstDigit = 0;                         // Первая цифра для показа
 const int lastDigit = 9;                          // Последняя цифра для показа
-const int repeatedDigitMultiplier = 1111;         // Повторяет одну цифру во всех разрядах
 const unsigned long displayInterval = 1000;       // 1 секунда в миллисекундах
 
 // Класс-адаптер для четырёхразрядного дисплея TM1637
 class DigitalDisplay {
 private:
     TM1637Display display;
+    const int repeatedDigitMultiplier = 1111;  // Повторяет одну цифру во всех разрядах
 
 public:
     // Запоминает пины дисплея и устанавливает среднюю яркость
@@ -20,7 +20,7 @@ public:
     }
 
     // Показывает одну цифру сразу во всех четырёх разрядах
-    void showNumber(int number) {
+    void showRepeatedDigit(int digit) {
         // TODO: показать цифру во всех разрядах
     }
 };

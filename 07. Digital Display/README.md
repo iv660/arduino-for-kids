@@ -36,10 +36,10 @@ PlatformIO скачает библиотеку при первой сборке 
 
 ## Класс `DigitalDisplay`
 
-Библиотека умеет выполнять много разных команд. Чтобы главный код оставался простым, создадим класс-адаптер `DigitalDisplay`. Он будет понимать только одну полезную для нас команду: `showNumber()`.
+Библиотека умеет выполнять много разных команд. Чтобы главный код оставался простым, создадим класс-адаптер `DigitalDisplay`. Он будет понимать только одну полезную для нас команду: `showRepeatedDigit()`.
 
 ```cpp
-digitalDisplay.showNumber(currentDigit);
+digitalDisplay.showRepeatedDigit(currentDigit);
 ```
 
 Эта команда покажет одну цифру сразу во всех четырёх разрядах.
@@ -58,7 +58,7 @@ digitalDisplay.showNumber(currentDigit);
 
 ```cpp
 void loop() {
-    digitalDisplay.showNumber(currentDigit);
+    digitalDisplay.showRepeatedDigit(currentDigit);
     delay(displayInterval);
 
     currentDigit++;
@@ -71,24 +71,24 @@ void loop() {
 
 Сначала показываем цифру. Потом ждём секунду. Затем увеличиваем цифру. Отдельная простая проверка возвращает счёт к 0 после 9.
 
-#### Шаг 2: Напиши метод `DigitalDisplay.showNumber()`
+#### Шаг 2: Напиши метод `DigitalDisplay.showRepeatedDigit()`
 
-Метод получает одну цифру. Умножь её на константу `repeatedDigitMultiplier`: тогда `3` превратится в `3333`, а `7` — в `7777`. Затем передай получившееся число библиотеке методом `showNumberDec()`.
+Метод получает одну цифру. Умножь её на приватную константу `repeatedDigitMultiplier`: тогда `3` превратится в `3333`, а `7` — в `7777`. Затем передай получившееся число библиотеке методом `showNumberDec()`.
 
 Второй параметр `true` просит библиотеку показывать нули слева. Поэтому цифра 0 будет показана как `0000`, а не как пустой экран.
 
 ```cpp
-void showNumber(int number) {
-    int repeatedNumber = number * repeatedDigitMultiplier;
+void showRepeatedDigit(int digit) {
+    int repeatedNumber = digit * repeatedDigitMultiplier;
     display.showNumberDec(repeatedNumber, true);
 }
 ```
 
-Замени комментарий `TODO` в методе `showNumber()` этим кодом.
+Замени комментарий `TODO` в методе `showRepeatedDigit()` этим кодом.
 
 ## Запуск программы
 
-1. Заполни метод `showNumber()` и функцию `loop()`.
+1. Заполни метод `showRepeatedDigit()` и функцию `loop()`.
 2. Сохрани `src/main.cpp`.
 3. Подключи Arduino к компьютеру через USB.
 4. Открой терминал в папке `07. Digital Display` и введи:
@@ -119,6 +119,6 @@ const unsigned long displayInterval = 1000;
 - **DIO** — провод, по которому Arduino отправляет данные дисплею.
 - **Класс-адаптер** — класс, который делает работу со сложной библиотекой проще.
 - **Библиотека** — готовый код, которым можно пользоваться в своей программе.
-- **`showNumber()`** — метод класса `DigitalDisplay`, который показывает цифру на дисплее.
+- **`showRepeatedDigit()`** — метод класса `DigitalDisplay`, который показывает одну цифру во всех разрядах.
 - **`delay()`** — команда ожидания; число внутри указано в миллисекундах.
 - **Миллисекунда** — одна тысячная секунды; 1000 миллисекунд — это 1 секунда.

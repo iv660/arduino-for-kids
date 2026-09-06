@@ -114,8 +114,8 @@ public:
     }
 
     // Возвращает оставшееся время в миллисекундах
-    unsigned long getRemainingTime() {
-        // TODO: реализуй метод getRemainingTime
+    unsigned long getRemainingMilliseconds() {
+        // TODO: реализуй метод getRemainingMilliseconds
     }
 };
 
@@ -209,7 +209,7 @@ void setup() {
 
 void loop() {
     if (timer.isRunning()) {
-        // TODO: получи оставшееся время методом timer.getRemainingTime()
+        // TODO: получи оставшееся время методом timer.getRemainingMilliseconds()
         // TODO: передай это время в timeView.setTimeInMilliseconds()
         return;
     }
